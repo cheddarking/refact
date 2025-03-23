@@ -246,6 +246,41 @@ passthrough_mini_db = {
     # for pricing consult: https://ai.google.dev/pricing
     # pricing below is assumed for <= 128_000 context is used
 
+    # >>> START: New models added by Elvis on 23rd March 2025
+    "gemini-2.0-flash": {
+    "backend": "litellm",
+    "provider": "gemini",
+    "tokenizer_path": "Xenova/gemma2-tokenizer",
+    "resolve_as": "gemini/gemini-2.0-flash",
+    "T": 1_048_576,  # 1 million token context window
+    "T_out": 8_192,  # Maximum output length
+    "pp1000t_prompt": 100,  # $0.10 per 1M tokens for input
+    "pp1000t_generated": 400,  # $0.40 per 1M tokens for output (estimated)
+    "filter_caps": ["chat", "tools", "completion", "vision"],
+    },
+    "gemini-2.0-pro-exp-02-05": {
+        "backend": "litellm",
+        "provider": "gemini",
+        "tokenizer_path": "Xenova/gemma2-tokenizer",
+        "resolve_as": "gemini/gemini-2.0-pro-exp-02-05",
+        "T": 2_097_152,  # 2 million token context window
+        "T_out": 8_192,  # Maximum output length
+        "pp1000t_prompt": 2000,  # $2.00 per 1M tokens for input (estimated)
+        "pp1000t_generated": 8000,  # $8.00 per 1M tokens for output (estimated)
+        "filter_caps": ["chat", "tools", "completion", "vision"],
+    },
+    "gemini-2.0-flash-thinking-exp-01-21": {
+        "backend": "litellm",
+        "provider": "gemini",
+        "tokenizer_path": "Xenova/gemma2-tokenizer",
+        "resolve_as": "gemini/gemini-2.0-flash-thinking-exp-01-21",
+        "T": 1_048_576,  # 1 million token context window
+        "T_out": 8_192,  # Maximum output length
+        "pp1000t_prompt": 150,  # $0.15 per 1M tokens for input (estimated)
+        "pp1000t_generated": 600,  # $0.60 per 1M tokens for output (estimated)
+        "filter_caps": ["chat", "tools", "completion", "vision"],
+    },
+    # <<< END: New models added by Elvis on 23rd March 2025
     "gemini-2.0-flash-exp": {
         "backend": "litellm",
         "provider": "gemini",
